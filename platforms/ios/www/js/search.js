@@ -56,7 +56,7 @@ function searchFood(){ //search json file for input
 
 
 function displayDetails(input){ // displays food details
-    const detailsContainer = document.getElementById('foodDetails');
+    const detailsContainer = document.getElementById('results');
     detailsContainer.innerHTML = ''; // Clear previous results
 
     const normalizedInput = input.toLowerCase();

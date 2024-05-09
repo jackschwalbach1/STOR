@@ -3,14 +3,10 @@ body{
     background-color: white;
 }
 
-/* Styles for the results container */
+/* Styles for the results container 
 #results {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #1b1a1a;
-    border: 1px solid #f74c4c;
-    border-radius: 5px;
-}
+    
+} */
 
 /* Styles for the unordered list */
 ul {
@@ -35,9 +31,15 @@ li:hover {
     cursor: pointer;
 }
 
+#IT{
+    color: black;
+    font-family: 'League Spartan';
+    text-align: center;
+}
+
 #search-section {
     display: flex;
-    border: 2px solid #007BFF;
+    border: 2px solid #bf2026;
     border-radius: 25px;
     overflow: hidden;
 }
@@ -47,15 +49,20 @@ li:hover {
     width: 300px;
     outline: none;
     font-size: 16px;
+    background-color: #bf2026;
+    color: rgb(226, 226, 226);;
 }
 #search-button {
-    background: #007BFF;
+    background: #921a1e;
     border: none;
-    color: white;
+    color: rgb(226, 226, 226);;
     padding: 10px 45px;
     cursor: pointer;
     font-size: 16px;
 }
+::placeholder{
+    color: rgb(226, 226, 226);
+}
 #search-button:hover {
-    background-color: #0056b3;
+    background-color: #510003;
 }
