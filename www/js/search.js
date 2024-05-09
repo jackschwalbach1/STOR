@@ -91,7 +91,6 @@ function displaySTORinfo(food_ID){ //display information about storing
 
     const food = result[0];
 
-    console.log(food.Pantry_Metric);
 
     if(food.Pantry_Metric != 'NR'){
         const pan_div = document.createElement('div');
