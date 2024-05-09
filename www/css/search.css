@@ -1,0 +1,31 @@
+/* Styles for the results container */
+#results {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #1b1a1a;
+    border: 1px solid #f74c4c;
+    border-radius: 5px;
+}
+
+/* Styles for the unordered list */
+ul {
+    color: #1b1a1a;
+    list-style-type: none; /* Removes the default bullet points */
+    padding: 0;
+}
+
+/* Styles for each list item */
+li {
+    padding: 8px;
+    margin: 5px 0;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Hover effect for list items */
+li:hover {
+    background-color: #e9ecef;
+    cursor: pointer;
+}
