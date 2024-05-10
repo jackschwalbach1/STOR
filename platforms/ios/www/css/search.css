@@ -3,14 +3,10 @@ body{
     background-color: white;
 }
 
-/* Styles for the results container */
+/* Styles for the results container 
 #results {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #1b1a1a;
-    border: 1px solid #f74c4c;
-    border-radius: 5px;
-}
+    
+} */
 
 /* Styles for the unordered list */
 ul {
@@ -54,15 +50,19 @@ li:hover {
     outline: none;
     font-size: 16px;
     background-color: #bf2026;
+    color: rgb(226, 226, 226);;
 }
 #search-button {
-    background: #bf2026;
+    background: #921a1e;
     border: none;
-    color: white;
+    color: rgb(226, 226, 226);;
     padding: 10px 45px;
     cursor: pointer;
     font-size: 16px;
 }
+::placeholder{
+    color: rgb(226, 226, 226);
+}
 #search-button:hover {
-    background-color: #bf2026;
+    background-color: #510003;
 }

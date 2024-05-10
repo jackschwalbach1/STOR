@@ -46,7 +46,8 @@ li:hover {
 #search-input {
     border: none;
     padding: 10px 20px;
-    width: 300px;
+    width: 100%;
+    flex-grow: 1;
     outline: none;
     font-size: 16px;
     background-color: #bf2026;

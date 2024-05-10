@@ -91,6 +91,12 @@ function displaySTORinfo(food_ID){ //display information about storing
 
     const food = result[0];
 
+    const name = document.createElement('h2');
+    name.innerHTML = food.Name;
+    name.style.color = 'black';
+    name.style.textAlign = 'center';
+    infoContainer.appendChild(name);
+
 
     if(food.Pantry_Metric != 'NR'){
         const pan_div = document.createElement('div');
