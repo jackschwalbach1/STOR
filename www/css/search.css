@@ -1,3 +1,12 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s; /* This transitions the background color very slowly to prevent the flash of color change */
+    -webkit-text-fill-color: #ffffff !important; /* Change the text color if needed */
+    box-shadow: 0 0 0px 1000px bf2026 inset; /* Change 'white' to whatever background color you want */
+}
+
 
 body{
     background-color: white;
@@ -66,4 +75,12 @@ li:hover {
 }
 #search-button:hover {
     background-color: #510003;
+}
+
+#logo{
+    position: absolute;
+    top: 0;              
+    right: 0;            
+    width: 120px;
+    height: auto;   
 }
