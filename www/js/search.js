@@ -103,7 +103,7 @@ function displaySTORinfo(food_ID){ //display information about storing
         pan_div.style.backgroundColor = '#edc195';
         if(food.Pantry_Min == food.Pantry_Max){
             if(food.Pantry_Max == 1){
-                new_metric = food.Pantry_Max.slice(0,-1);
+                new_metric = food.Pantry_Metric.slice(0,-1);
                 pan_div.innerHTML = food.Pantry_Min + " " + new_metric;
             }
             else{
