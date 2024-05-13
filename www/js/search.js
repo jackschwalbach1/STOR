@@ -1,5 +1,5 @@
 // Declare a global variable
-var globalFoodData;
+let globalFoodData;
 
 async function loadAndUseFoodData() { //loads the json file
   try {
@@ -15,7 +15,7 @@ loadAndUseFoodData();
 
 
 function displayResults(foodItems) { // displays search results
-    const resultsContainer = document.getElementById('results');
+    let resultsContainer = document.getElementById('results');
     resultsContainer.innerHTML = ''; // Clear previous results
 
     if (foodItems.length === 0) {
@@ -43,7 +43,7 @@ function displayResults(foodItems) { // displays search results
 
 
 function searchFood(){ //search json file for input
-    loadAndUseFoodData();
+    //loadAndUseFoodData();
     //console.log(globalFoodData[0].Name)
     const searchInput = document.getElementById('search-input').value;
     const normalizedInput = searchInput.toLowerCase();
@@ -54,7 +54,7 @@ function searchFood(){ //search json file for input
 
 
 function displayDetails(food_ID){ // displays food details
-    const detailsContainer = document.getElementById('results');
+    let detailsContainer = document.getElementById('results');
     detailsContainer.innerHTML = ''; // Clear previous results
 
     const clicked_food_array = globalFoodData.filter(item => item.ID == food_ID);
@@ -84,14 +84,14 @@ function displayDetails(food_ID){ // displays food details
 
 
 function displaySTORinfo(food_ID){ //display information about storing
-    const infoContainer = document.getElementById('results');
+    let infoContainer = document.getElementById('results');
     infoContainer.innerHTML = ''; // Clear previous results
 
     const result = globalFoodData.filter(item => item.ID == food_ID);
 
-    const food = result[0];
+    let food = result[0];
 
-    const name = document.createElement('h2');
+    let name = document.createElement('h2');
     name.innerHTML = food.Name;
     name.style.color = 'black';
     name.style.textAlign = 'center';
@@ -99,43 +99,89 @@ function displaySTORinfo(food_ID){ //display information about storing
 
 
     if(food.Pantry_Metric != 'NR'){
-        const pan_div = document.createElement('div');
+        let pan_div = document.createElement('div');
         pan_div.style.backgroundColor = '#edc195';
-        pan_div.innerHTML = food.Pantry_Min + "-" + food.Pantry_Max + " " + food.Pantry_Metric;
-        const img = document.createElement('img');
-        img.src = '';
+        if(food.Pantry_Min == food.Pantry_Max){
+            if(food.Pantry_Max == 1){
+                new_metric = food.Pantry_Max.slice(0,-1);
+                pan_div.innerHTML = food.Pantry_Min + " " + new_metric;
+            }
+            else{
+                pan_div.innerHTML = food.Pantry_Min + " " + food.Pantry_Metric;
+            }
+        }
+        else{
+            pan_div.innerHTML = food.Pantry_Min + "-" + food.Pantry_Max + " " + food.Pantry_Metric;
+        }
+        let img = document.createElement('img');
+        img.src = './img/pantry_icon.png';
+        img.width = 100;
+        pan_div.appendChild(img);
 
         infoContainer.appendChild(pan_div);
     }
     if(food.Refrigerate_Metric != 'NR'){
-        const fridge_div = document.createElement('div');
+        let fridge_div = document.createElement('div');
         fridge_div.style.backgroundColor = '#5ee5f7';
-        fridge_div.innerHTML = food.Refrigerate_Min + "-" + food.Refrigerate_Max + " " + food.Refrigerate_Metric;
-        const img = document.createElement('img');
-        img.src = '';
+        if(food.Refrigerate_Min == food.Refrigerate_Max){
+            if(food.Refrigerate_Max == 1){
+                new_metric = food.Refrigerate_Max.slice(0,-1);
+                fridge_div.innerHTML = food.Refrigerate_Min + " " + new_metric;
+            }
+            else{
+                fridge_div.innerHTML = food.Refrigerate_Min + " " + food.Refrigerate_Metric;
+            }
+        }
+        else{
+            fridge_div.innerHTML = food.Refrigerate_Min + "-" + food.Refrigerate_Max + " " + food.Refrigerate_Metric;
+        }
+        let img = document.createElement('img');
+        img.src = './img/fridge_icon.png';
+        img.width = 100;
+        fridge_div.appendChild(img);
+        
 
         infoContainer.appendChild(fridge_div);
     }
     if(food.Freeze_Metric != 'NR'){
-        const freeze_div = document.createElement('div');
+        let freeze_div = document.createElement('div');
         freeze_div.style.backgroundColor = '#2b2999';
-        freeze_div.innerHTML = food.Freeze_Min + "-" + food.Freeze_Max + " " + food.Freeze_Metric;
-        const img = document.createElement('img');
-        img.src = '';
+        if(food.Freeze_Min == food.Freeze_Max){
+            if(food.Freeze_Max == 1){
+                new_metric = food.Freeze_Max.slice(0,-1);
+                freeze_div.innerHTML = food.Freeze_Max + " " + new_metric;
+            }
+            else{
+                freeze_div.innerHTML = food.Freeze_Max + " " + food.Refrigerate_Metric;
+            }
+        }
+        else{
+            freeze_div.innerHTML = food.Freeze_Min + "-" + food.Freeze_Max + " " + food.Freeze_Metric;
+        }
+        let img = document.createElement('img');
+        img.src = './img/fridge_icon.png';
+        img.width = 100;
+        freeze_div.appendChild(img);
+
+        let img_s = document.createElement('img');
+        img_s.src = './img/snowflake.png';
+        img_s.width = 50;
+        freeze_div.appendChild(img_s);
+       
 
         infoContainer.appendChild(freeze_div);
     }
     if(food.Tip != null){
-        const tip_div = document.createElement('div');
+        let tip_div = document.createElement('div');
         tip_div.style.backgroundColor = '#bf2026';
 
-        const tip_title = document.createElement('h3');
+        let tip_title = document.createElement('h3');
         tip_title.innerHTML = "Pro Tip";
         tip_title.style.color = "yellow";
         tip_title.style.textAlign = "center";
         tip_div.appendChild(tip_title);
 
-        const tip = document.createElement('p')
+        let tip = document.createElement('p')
         tip.innerHTML = food.Tip;
         tip_div.appendChild(tip);
 
