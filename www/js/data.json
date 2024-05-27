@@ -4283,7 +4283,7 @@
      "Name": "Soda",
      "Subtitle": "carbonated cola drinks, mixers, diet sodas; bottles or cans",
      "Pantry_Metric": "NR",
-     "Refrigerate_Metric": "NR",
+     "Refrigerate_Metric": "Package use-by date",
      "Freeze_Metric": "NR"
     },
     {

@@ -101,7 +101,7 @@ function displaySTORinfo(food_ID){ //display information about storing
     if(food.Pantry_Metric != 'NR'){
         let pan_div = document.createElement('div');
         pan_div.style.backgroundColor = '#edc195';
-        if(food.Pantry_Min == food.Pantry_Max){
+        if(food.Pantry_Min == food.Pantry_Max && food.Pantry_Max != null){
             if(food.Pantry_Max == 1){
                 new_metric = food.Pantry_Metric.slice(0,-1);
                 pan_div.innerHTML = food.Pantry_Min + " " + new_metric;
@@ -109,6 +109,9 @@ function displaySTORinfo(food_ID){ //display information about storing
             else{
                 pan_div.innerHTML = food.Pantry_Min + " " + food.Pantry_Metric;
             }
+        }
+        else if(food.Pantry_Metric == "Package use-by date" || food.Pantry_Metric == "Indefinitely"){
+            pan_div.innerHTML = food.Pantry_Metric;
         }
         else{
             pan_div.innerHTML = food.Pantry_Min + "-" + food.Pantry_Max + " " + food.Pantry_Metric;
@@ -123,7 +126,7 @@ function displaySTORinfo(food_ID){ //display information about storing
     if(food.Refrigerate_Metric != 'NR'){
         let fridge_div = document.createElement('div');
         fridge_div.style.backgroundColor = '#5ee5f7';
-        if(food.Refrigerate_Min == food.Refrigerate_Max){
+        if(food.Refrigerate_Min == food.Refrigerate_Max && food.Refrigerate_Max != null){
             if(food.Refrigerate_Max == 1){
                 new_metric = food.Refrigerate_Max.slice(0,-1);
                 fridge_div.innerHTML = food.Refrigerate_Min + " " + new_metric;
@@ -131,6 +134,9 @@ function displaySTORinfo(food_ID){ //display information about storing
             else{
                 fridge_div.innerHTML = food.Refrigerate_Min + " " + food.Refrigerate_Metric;
             }
+        }
+        else if(food.Refrigerate_Metric == "Package use-by date" || food.Refrigerate_Metric == "Indefinitely"){
+            fridge_div.innerHTML = food.Refrigerate_Metric;
         }
         else{
             fridge_div.innerHTML = food.Refrigerate_Min + "-" + food.Refrigerate_Max + " " + food.Refrigerate_Metric;
@@ -146,14 +152,17 @@ function displaySTORinfo(food_ID){ //display information about storing
     if(food.Freeze_Metric != 'NR'){
         let freeze_div = document.createElement('div');
         freeze_div.style.backgroundColor = '#2b2999';
-        if(food.Freeze_Min == food.Freeze_Max){
+        if(food.Freeze_Min == food.Freeze_Max && food.Freeze_Max != null){
             if(food.Freeze_Max == 1){
                 new_metric = food.Freeze_Max.slice(0,-1);
                 freeze_div.innerHTML = food.Freeze_Max + " " + new_metric;
             }
             else{
-                freeze_div.innerHTML = food.Freeze_Max + " " + food.Refrigerate_Metric;
+                freeze_div.innerHTML = food.Freeze_Max + " " + food.Freeze_Metric;
             }
+        }
+        else if(food.Freeze_Metric == "Package use-by date" || food.Freeze_Metric == "Indefinitely"){
+            freeze_div.innerHTML = food.Freeze_Metric;
         }
         else{
             freeze_div.innerHTML = food.Freeze_Min + "-" + food.Freeze_Max + " " + food.Freeze_Metric;
